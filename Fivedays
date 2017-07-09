@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+    function formatNumber(n){
+      n= n.toString()
+      return n[1]?n:'0'+n
+
+    }
+    function formatTime(date){
+      var year=date.getFullYear();
+      var month=date.getMonth();
+      var day=date.getDate();
+      return [year,month,day].map(formatNumber).join('-');
+
+    }
+   var number=[];
+  for(var i=0;i<5;i++){
+    var now=new Date();
+    var nextday=now.setDate(now.getDate()+i);
+    var input=formatTime(new Date(nextday));
+    number.push(input);
+  }
+  console.log(number);
+  
+
+</script>
+</body>
+</html>
